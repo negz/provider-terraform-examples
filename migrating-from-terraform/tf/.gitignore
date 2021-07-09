@@ -1,0 +1,3 @@
+gcp-credentials.json
+.terraform
+.terraform.lock.hcl
