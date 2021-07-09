@@ -8,7 +8,7 @@ output "url" {
 }
 
 resource "google_storage_bucket" "example" {
-  name     = "crossplane-example-${terraform.workspace}"
+  name     = terraform.workspace
   location = var.location
 }
 

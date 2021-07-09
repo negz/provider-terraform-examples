@@ -1,0 +1,15 @@
+apiVersion: example.org/v1alpha1
+kind: Bucket
+metadata:
+  name: example-bucket
+  annotations:
+    crossplane.io/external-name: provider-terraform-example
+spec:
+  parameters:
+    location: USA
+  compositionSelector:
+    matchLabels:
+      # Change this to 'gcp' to use the native provider.
+      provider: terraform
+  writeConnectionSecretToRef:
+    name: example-bucket

@@ -1,0 +1,16 @@
+apiVersion: tf.crossplane.io/v1alpha1
+kind: ProviderConfig
+metadata:
+  name: default
+spec:
+  # Note that unlike most provider configs this one supports an array of
+  # credentials. This is because each Terraform workspace uses a single
+  # Crossplane provider config, but could use multiple Terraform providers each
+  # with their own credentials.
+  credentials:
+  - filename: gcp-credentials.json
+    source: Secret
+    secretRef:
+      namespace: crossplane-system
+      name: gcp-credentials
+      key: credentials
