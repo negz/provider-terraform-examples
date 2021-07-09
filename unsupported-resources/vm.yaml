@@ -1,0 +1,12 @@
+apiVersion: example.org/v1alpha1
+kind: VM
+metadata:
+  name: example-machine
+  annotations:
+    crossplane.io/external-name: cool-example
+spec:
+  parameters:
+    size: small
+    location: west-coast
+  writeConnectionSecretToRef:
+    name: example-machine
